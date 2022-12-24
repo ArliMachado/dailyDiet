@@ -27,3 +27,11 @@ export const Photo = styled.Image`
   height: 40px;
   border-radius: 20px;
 `
+export const ButtonContent = styled.View`
+  margin-top: 40px;
+  width: 100%;
+`
+
+export const Title = styled.Text`
+  margin-bottom: 8px;
+`
