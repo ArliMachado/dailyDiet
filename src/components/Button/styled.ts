@@ -23,7 +23,7 @@ export const Title = styled.Text`
   ${({ theme }) => css`
     color: ${theme.COLORS.WHITE};
     font-size: ${theme.FONT_SIZE.SM}px;
-    font-weight: ${theme.FONT_FAMILY.BOLD};
+    font-family: ${theme.FONT_FAMILY.BOLD};
   `}
   margin-left: 12px
 `

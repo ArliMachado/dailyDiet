@@ -34,13 +34,13 @@ export const Title = styled.Text`
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_700};
     font-size: ${theme.FONT_SIZE.XXL}px;
-    font-weight: ${theme.FONT_FAMILY.BOLD};
+    font-family: ${theme.FONT_FAMILY.BOLD};
   `}
 `
 export const Subtitle = styled.Text`
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_600};
     font-size: ${theme.FONT_SIZE.SM}px;
-    font-weight: ${theme.FONT_FAMILY.REGULAR};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
   `}
 `
