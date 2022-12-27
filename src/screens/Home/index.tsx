@@ -72,7 +72,11 @@ export function Home() {
         <S.Logo source={logoImg} />
         <S.Photo source={{ uri: 'https://github.com/ArliMachado.png' }} />
       </S.Header>
-      <HighLight title="90,86%" subtitle="das refeições dentro da dieta" />
+      <HighLight
+        title="90,86%"
+        subtitle="das refeições dentro da dieta"
+        iconPosition="RIGHT"
+      />
 
       <S.ButtonContent>
         <S.Title>Refeições</S.Title>

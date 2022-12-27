@@ -1,4 +1,3 @@
-import { HighLight } from '@components/HighLight'
 import { StatusBar } from 'react-native'
 import { useTheme } from 'styled-components/native'
 

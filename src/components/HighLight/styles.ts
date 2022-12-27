@@ -1,28 +1,47 @@
 /* eslint-disable prettier/prettier */
-import styled, { css } from 'styled-components/native'
+import styled, { css, DefaultTheme } from 'styled-components/native'
 
-import { ArrowUpRight } from 'phosphor-react-native'
+import { ArrowLeft, ArrowUpRight } from 'phosphor-react-native'
 
-export type HighLightCardTypeProps = 'PRIMARY' | 'SECONDARY'
+export type HighLightCardTypeProps = 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
 
 type Props = {
   type: HighLightCardTypeProps
 }
 
+const backgroundModifiers = {
+  'PRIMARY': (theme: DefaultTheme) => theme.COLORS.GREEN_LIGHT,
+  'SECONDARY': (theme: DefaultTheme) => theme.COLORS.RED_LIGHT,
+  'TERTIARY': (theme: DefaultTheme) => theme.COLORS.GRAY_200
+}
+const iconColorModifiers = {
+  'PRIMARY': (theme: DefaultTheme) => theme.COLORS.GREEN_DARK,
+  'SECONDARY': (theme: DefaultTheme) => theme.COLORS.RED_DARK,
+  'TERTIARY': (theme: DefaultTheme) => ''
+}
+
 export const Container = styled.View<Props>`
   width: 100%;
   padding: 20px 16px;
-  margin-top: 36px;
   border-radius: 8px;
   align-items: center;
 
-  background-color: ${({ type, theme }) =>
-    type === 'PRIMARY' ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
+  background-color: ${({ type, theme }) => backgroundModifiers[type](theme)};
 `
 
-export const Icon = styled(ArrowUpRight).attrs<Props>(({ theme, type }) => ({
+export const BackIcon = styled(ArrowLeft).attrs<Props>(({ theme, type }) => ({
   size: 24,
-  color: type === 'PRIMARY' ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK,
+  color: iconColorModifiers[type](theme)
+})) <Props>`
+  position: absolute;
+  top: 56px;
+  left: 24px;
+`
+
+
+export const OpenIcon = styled(ArrowUpRight).attrs<Props>(({ theme, type }) => ({
+  size: 24,
+  color: iconColorModifiers[type](theme)
 })) <Props>`
   position: absolute;
   top: 8px;
