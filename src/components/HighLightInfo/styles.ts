@@ -15,11 +15,11 @@ const backgroundModifiers = {
 }
 
 export const Container = styled.View<Props>`
-  /* flex: 1; */
   width: 100%;
   padding: 20px 16px;
   border-radius: 8px;
   align-items: center;
+  justify-content: center;
   /* margin-bottom: 12px; */
 
   background-color: ${({ type, theme }) => backgroundModifiers[type](theme)};
@@ -31,6 +31,7 @@ export const Title = styled.Text`
     color: ${theme.COLORS.GRAY_700};
     font-size: ${theme.FONT_SIZE.XXL}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
+    text-align: center;
   `}
 `
 export const Subtitle = styled.Text`
@@ -38,5 +39,6 @@ export const Subtitle = styled.Text`
     color: ${theme.COLORS.GRAY_600};
     font-size: ${theme.FONT_SIZE.SM}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
+    text-align: center
   `}
 `

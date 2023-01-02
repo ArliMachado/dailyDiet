@@ -1,4 +1,5 @@
 import { HighLight } from '@components/HighLight'
+import { HighLightInfo } from '@components/HighLightInfo'
 import { useNavigation } from '@react-navigation/native'
 import { StatusBar } from 'react-native'
 import { useTheme } from 'styled-components/native'
@@ -30,27 +31,31 @@ export function Statistic() {
       </S.Header>
       <S.Content>
         <S.Title>Estatísticas gerais</S.Title>
-        <S.StatisticHighLight
-          title="22"
-          subtitle="melhor sequência de pratos dentro da dieta"
-          type="TERTIARY"
-        />
-        <S.StatisticHighLight
-          title="109"
-          subtitle="refeições registradas"
-          type="TERTIARY"
-        />
-
+        <S.StatisticContent>
+          <HighLightInfo
+            title="22"
+            subtitle="melhor sequência de pratos dentro da dieta"
+            type="TERTIARY"
+          />
+        </S.StatisticContent>
+        <S.StatisticContent>
+          <HighLightInfo
+            title="109"
+            subtitle="refeições registradas"
+            type="TERTIARY"
+          />
+        </S.StatisticContent>
         <S.StatisticInfoContent>
-          <S.StatisticDietInfo
-            title="99"
-            subtitle="refeições dentro da dieta"
-          />
-          <S.StatisticDietInfo
-            title="10"
-            subtitle="refeições fora da dieta"
-            type="SECONDARY"
-          />
+          <S.StatisticDietInfo>
+            <HighLightInfo title="99" subtitle="refeições dentro da dieta" />
+          </S.StatisticDietInfo>
+          <S.StatisticDietInfo>
+            <HighLightInfo
+              title="10"
+              subtitle={`refeições fora da ${'\n'} dieta`}
+              type="SECONDARY"
+            />
+          </S.StatisticDietInfo>
         </S.StatisticInfoContent>
       </S.Content>
     </S.Container>

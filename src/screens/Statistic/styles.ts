@@ -1,6 +1,5 @@
-import styled, { css, DefaultTheme } from 'styled-components/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { HighLightInfo } from '@components/HighLightInfo'
+import styled, { css, DefaultTheme } from 'styled-components/native'
 
 export type HeaderColorTypeProps = 'PRIMARY' | 'SECONDARY'
 
@@ -43,20 +42,17 @@ export const Title = styled.Text`
     font-family: ${theme.FONT_FAMILY.BOLD};
   `}
 `
-export const StatisticHighLight = styled(HighLightInfo)`
+export const StatisticContent = styled.View`
   margin-bottom: 12px;
+  width: 100%;
 `
 
 export const StatisticInfoContent = styled.View`
-  margin-top: 12px;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
 `
-export const StatisticDietInfo = styled(HighLightInfo)`
+export const StatisticDietInfo = styled.View`
   width: 48%;
   height: 107px;
-  padding: 16px;
-  align-items: center;
-  justify-content: center;
 `
