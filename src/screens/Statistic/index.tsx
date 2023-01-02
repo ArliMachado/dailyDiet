@@ -1,3 +1,5 @@
+import { HighLight } from '@components/HighLight'
+import { useNavigation } from '@react-navigation/native'
 import { StatusBar } from 'react-native'
 import { useTheme } from 'styled-components/native'
 
@@ -5,6 +7,11 @@ import * as S from './styles'
 
 export function Statistic() {
   const { COLORS } = useTheme()
+  const navigation = useNavigation()
+
+  function handleGoToHome() {
+    navigation.navigate('home')
+  }
   return (
     <S.Container>
       <StatusBar
@@ -12,11 +19,15 @@ export function Statistic() {
         backgroundColor={COLORS.GREEN_LIGHT}
         translucent
       />
-      <S.Header
-        title="90,86%"
-        subtitle="das refeições dentro da dieta"
-        iconPosition="LEFT"
-      />
+      <S.Header type="PRIMARY">
+        <HighLight
+          title="90,86%"
+          subtitle="das refeições dentro da dieta"
+          iconPosition="LEFT"
+          onGoToScreen={handleGoToHome}
+          type="PRIMARY"
+        />
+      </S.Header>
       <S.Content>
         <S.Title>Estatísticas gerais</S.Title>
         <S.StatisticHighLight

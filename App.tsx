@@ -7,11 +7,12 @@ import {
 import { ActivityIndicator, StatusBar } from 'react-native'
 import { ThemeProvider } from 'styled-components'
 
-import { Home } from '@screens/Home'
+import { Routes } from '@routes/index'
 import theme from '@theme/index'
 
 export default function App() {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold })
+
   return (
     <ThemeProvider theme={theme}>
       <StatusBar
@@ -19,7 +20,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home /> : <ActivityIndicator />}
+      {fontsLoaded ? <Routes /> : <ActivityIndicator />}
     </ThemeProvider>
   )
 }

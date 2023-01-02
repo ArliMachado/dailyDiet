@@ -3,6 +3,7 @@ import { Button } from '@components/Button'
 import { HighLight } from '@components/HighLight'
 import { DayListItem } from '@components/DayListItem'
 import * as S from './styles'
+import { useNavigation } from '@react-navigation/native'
 
 const data = [
   {
@@ -66,6 +67,12 @@ const data = [
 ]
 
 export function Home() {
+  const navigation = useNavigation()
+
+  function handleStatistics() {
+    navigation.navigate('statistics')
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -76,6 +83,7 @@ export function Home() {
         title="90,86%"
         subtitle="das refeições dentro da dieta"
         iconPosition="RIGHT"
+        onGoToScreen={() => handleStatistics()}
       />
 
       <S.ButtonContent>

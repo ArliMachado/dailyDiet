@@ -2,6 +2,7 @@
 import styled, { css, DefaultTheme } from 'styled-components/native'
 
 import { ArrowLeft, ArrowUpRight } from 'phosphor-react-native'
+import { TouchableOpacity } from 'react-native'
 
 export type HighLightCardTypeProps = 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
 
@@ -22,30 +23,46 @@ const iconColorModifiers = {
 
 export const Container = styled.View<Props>`
   width: 100%;
-  padding: 20px 16px;
-  border-radius: 8px;
-  align-items: center;
+  border-radius: 20px;
 
   background-color: ${({ type, theme }) => backgroundModifiers[type](theme)};
+
+`
+
+export const Header = styled.View`
+  flex-direction: row;
+  flex: 1;
+`
+
+
+export const BackIconContent = styled(TouchableOpacity)`
+  justify-content: flex-start;
+  padding: 8px 16px 0px;
 `
 
 export const BackIcon = styled(ArrowLeft).attrs<Props>(({ theme, type }) => ({
   size: 24,
   color: iconColorModifiers[type](theme)
 })) <Props>`
-  position: absolute;
-  top: 56px;
-  left: 24px;
-`
 
+`
+export const OpenIconContent = styled(TouchableOpacity)`
+  align-items: flex-end;
+  flex: 1;
+  padding: 8px;
+`
 
 export const OpenIcon = styled(ArrowUpRight).attrs<Props>(({ theme, type }) => ({
   size: 24,
   color: iconColorModifiers[type](theme)
 })) <Props>`
-  position: absolute;
-  top: 8px;
-  right: 8px;
+
+`
+
+export const HighLightInfo = styled.View`
+  align-items: center;
+  padding: 20px 16px;
+
 `
 
 export const Title = styled.Text`
