@@ -23,7 +23,7 @@ const iconColorModifiers = {
 
 export const Container = styled.View<Props>`
   width: 100%;
-  border-radius: 20px;
+  border-radius: 8px;
 
   background-color: ${({ type, theme }) => backgroundModifiers[type](theme)};
 
