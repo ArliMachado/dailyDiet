@@ -73,6 +73,10 @@ export function Home() {
     navigation.navigate('statistics')
   }
 
+  function handleNewMeal() {
+    navigation.navigate('newMeal')
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -88,7 +92,7 @@ export function Home() {
 
       <S.ButtonContent>
         <S.Title>Refeições</S.Title>
-        <Button showIcon title="Nova refeição" />
+        <Button showIcon title="Nova refeição" onPress={handleNewMeal} />
       </S.ButtonContent>
 
       <S.DayList

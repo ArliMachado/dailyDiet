@@ -4,6 +4,7 @@ export declare global {
     interface RootParamList {
       home: undefined
       statistics: undefined
+      newMeal: undefined
       // players: {
       //   group: string
       // }
