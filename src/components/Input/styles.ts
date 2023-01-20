@@ -3,8 +3,6 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   width: 100%;
-  height: 70px;
-  align-items: flex-start;
 `
 
 export const Label = styled.Text`
@@ -18,17 +16,15 @@ export const Label = styled.Text`
 `
 
 export const InputText = styled(TextInput)`
-  flex: 1;
   min-height: 56px;
   max-height: 48px;
 
   border-radius: 6px;
   border-width: 1px;
-  border-radius: 6px;
   padding: 14px;
 
   ${({ theme }) => `
-    background-color: ${theme.COLORS.GRAY_300};
+    background-color: ${theme.COLORS.GRAY_100};
     border-color: ${theme.COLORS.GRAY_300};
     color: ${theme.COLORS.GRAY_700};
     font-family: ${theme.FONT_FAMILY.REGULAR};
